@@ -1,0 +1,29 @@
+﻿@model Cool.ViewModels.CinemaViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Cinemas and list of Tickets together</h2>
+
+<h4>List of Cinema</h4>
+<ul>
+    @foreach (var cin in Model.Cinema)
+    {
+        <li>
+            @cin.Name
+            @cin.Id
+        </li>
+    }
+</ul>
+
+<h4>List of Tickets</h4>
+<ul>
+    @foreach (var tic in Model.Ticket)
+    {
+        <li>
+            @tic.Name
+        </li>
+    }
+</ul>
+

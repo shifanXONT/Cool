@@ -1,0 +1,15 @@
+﻿@model Cool.ViewModels.RandomHouseViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.House.Name</h2>
+
+<ul>
+    @foreach (var buy in Model.Buyers)
+    {
+        <li>@buy.Name</li>
+    }
+</ul>
+

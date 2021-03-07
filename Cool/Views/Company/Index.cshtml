@@ -1,0 +1,53 @@
+﻿@model Cool.ViewModels.CompanyViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of Comapnues and list of mobile phones</h2>
+
+@{ 
+    var className = Model.Company.Count > 0 ? "popular" : null;
+}
+
+<h4 class="@className">Companies</h4>
+
+@if (Model.Company.Count == 0)
+{
+    <p>No one bought</p>
+}
+else
+{
+    <ul>
+        @foreach (var co in Model.Company)
+        {
+            <li>@co.Name</li>
+        }
+    </ul>
+}
+
+@{
+    var clname = Model.Phone.Count > 3 ? "good" : null;
+}
+
+<h4 class="@clname">Phomes</h4>
+
+@if (Model.Phone.Count == 0)
+{
+    <p>No one here whatever</p>
+}
+else
+{
+    <ul>
+        @foreach (var ph in Model.Phone)
+        {
+            <li>@ph.Name</li>
+        }
+    </ul>
+}
+
+
+
+
+
+
